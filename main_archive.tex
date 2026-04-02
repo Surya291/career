@@ -1,0 +1,133 @@
+\documentclass[9pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.37in]{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Black,
+  citecolor=Black,
+  urlcolor=NavyBlue,
+  pdfborder={0 0 0},
+}
+\urlstyle{same}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagenumbering{gobble}
+\linespread{0.86}
+\raggedbottom
+
+\setlist[itemize]{leftmargin=*, itemsep=0pt, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+% Optional: fill these with your actual URLs
+\newcommand{\GPUAcceleratedBPEURL}{https://example.com}
+\newcommand{\LaRaHomeURL}{https://example.com}
+\newcommand{\KVGMovieZoneURL}{https://example.com}
+\newcommand{\PublicationURL}{https://example.com}
+
+\newcommand{\resumeSection}[1]{%
+  \vspace{2pt}%
+  \textbf{#1}\par
+  \vspace{-5pt}%
+  \rule{\linewidth}{0.3pt}\par
+  \vspace{0pt}%
+}
+
+\newcommand{\resumeRole}[4]{%
+  \textbf{#1}\hfill #2\par
+  #3\hfill #4\par
+}
+
+\newcommand{\resumeSubline}[1]{%
+  #1\par
+}
+
+\newcommand{\kw}[1]{\textbf{#1}}
+
+\begin{document}
+
+\begin{center}
+  {\large \textbf{SURYA  KOIDALA}}\par
+  \vspace{0pt}
+  +1 551-235-1131 | \href{venugopalkadamba@gmail.com}{venugopalkadamba@gmail.com} | \href{https://linkedin.com/in/venugopalkadamba}{LinkedIn} | \href{http://github.com/venugopalkadamba}{GitHub} | \href{https://leetcode.com/u/venugopalkadamba}{Leetcode}
+\end{center}
+
+\resumeSection{EDUCATION}
+
+\resumeSubline{\textbf{Master of Science in Data Science, New York University}\hfill Sep 2024 - May 2026}
+\resumeSubline{Courses: High-Performance Machine Learning, GPU: Architecture and Programming, Bayesian Machine Learning}
+\resumeSubline{\textbf{Bachelor in Computer Science and Engineering, GMR Institute of Technology}\hfill Jul 2018 - Jun 2022}
+\resumeSubline{Courses: Computer Networks, Distributed Systems, Data Structures and Algorithms, Operating Systems}
+
+\resumeSection{WORK EXPERIENCE}
+
+\resumeRole{Data Science Intern}{June 2025 - Dec 2025}{Intellistack}{New York City}
+\begin{itemize}
+  \item Extended large-scale \kw{table column classification} to Higher Education and Employment/HR domains by designing \kw{synthetic data generators} and training \kw{transformer models} (\kw{RoBERTa}, \kw{DistilRoBERTa}), achieving \kw{\textasciitilde{}98\% F1} in production
+  \item Optimized and productionized a \kw{serverless} classification system, reducing inference costs by \kw{95\%} through \kw{ONNX} conversion, \kw{OpenVINO} optimization, and \kw{SageMaker} integration, saving \kw{\$50K} annually while maintaining accuracy at scale
+  \item Designed and deployed an \kw{agentic LLM-based} company profiling system using \kw{LangChain}, \kw{LangGraph}, and \kw{AWS Bedrock} with \kw{Claude}, automating company research and regulatory mapping; reduced customer onboarding time by \kw{30\%}
+  \item Developed \kw{LLM-driven} Salesforce field classification by scraping dynamic documentation with \kw{Playwright} and integrating \kw{Claude 3.5 Sonnet}, achieving \kw{95\%+} object-field coverage
+  \item Implemented \kw{semantic retrieval} pipelines using \kw{ms-marco-MiniLM-L-6-v2 embeddings}, enabling entity grouping and contextual grounding across structured datasets
+  \item Built distributed \kw{Kafka + Avro} pipelines for asynchronous inference, supporting scalable, fault-tolerant classification workflows
+  \item Improved robustness of LLM pipelines via enhanced \kw{prompt validation}, and \kw{pytest} coverage, reducing production regressions
+\end{itemize}
+
+\vspace{0pt}
+\resumeRole{Data Scientist}{Dec 2022 - Aug 2024}{Perfios Software Solutions Pvt Ltd}{Remote}
+\begin{itemize}
+  \item Devised an attention-based \kw{CNN Bi-LSTM CRF} model to optimize address parsing, achieving a \kw{12\%} performance improvement and \kw{82.5\%} reduction in inference time; utilized \kw{MLflow} for systematic experiment tracking and model performance comparison
+  \item Developed a client-facing chatbot POC using \kw{Retrieval Augmented Generation (RAG)} backed by a \kw{ChromaDB} vector database, powered by a \kw{8-bit quantized Mistral 7B LLM} and a \kw{Streamlit} interface, reducing customer query response time by \kw{80\%} and achieving a \kw{3\texttimes{}} inference speedup through \kw{Flash Attention}, \kw{Paged Attention}, and \kw{KV-cache} optimizations
+  \item Fine-tuned Facebook's \kw{opt-350m} model using \kw{QLoRA} for Bank Statement categorization, resulting in a \kw{6\%} increase in F1-score
+  \item Benchmarked open LLMs for inference with \kw{GPTQ}, \kw{GGUF}, and \kw{AWQ} quantization methods using \kw{VLLM} and \kw{Llama.cpp}
+\end{itemize}
+
+\vspace{0pt}
+\resumeRole{Founding Machine Learning Engineer}{Nov 2022 - Apr 2024}{Lending Katalyst Pvt. Ltd. (bootstrapped; built alongside full-time role)}{Remote}
+\begin{itemize}
+  \item Built highly scalable \kw{ML backend}, reducing property title-search report generation time from days to hours
+  \item Trained a custom \kw{BERT-CRF} model for legal entity extraction on augmented legal text, achieving \kw{97.6 F1-score}
+  \item Developed document classification and orientation detection models using \kw{EfficientNetB3} and \kw{MobileNet}, achieving \kw{97.3 F1} and \kw{96.4 F1}, respectively
+  \item Annotated and augmented legal document layouts; trained \kw{YOLOv8} for layout detection, reaching \kw{95.6 mAP@0.5}
+  \item Ensured production readiness with \kw{ONNX}, and deployed via \kw{Docker}, \kw{Kubernetes}, \kw{AWS Lambda}, and \kw{ECS}
+\end{itemize}
+
+\vspace{0pt}
+\resumeRole{Data Scientist 1}{Jul 2022 - Dec 2022}{Crowe LLP}{Remote}
+\begin{itemize}
+  \item Engineered a \kw{Dockerized} Python service using \kw{PaddleOCR} and \kw{Cascade TabNet} for robust table detection and data extraction, enabling cross-project reuse and reducing extraction time by \kw{60\%}
+  \item Performed \kw{time-series forecasting} using \kw{XGBoost} and \kw{CatBoost} ensembles to predict metal demand across multi-year datasets
+\end{itemize}
+
+\resumeSection{PROJECTS}
+
+\textbf{\href{https://github.com/venugopalkadamba/gpu-tokenizer}{GPU-Accelerated BPE Tokenizer}}\par
+\begin{itemize}
+  \item Implemented a \kw{CUDA}-based parallel GPU BPE tokenizer using \kw{cuCollections} and \kw{CCCL}, achieving \kw{192.5x CPU} and \kw{7.48x HF} speedups on \kw{32K+} sequences, with near-linear O(nd) block-level merge passes; added \kw{Pybind11} bindings and confirmed \kw{GPT-2} compatibility (0.68 - 0.69 character overlap, 0.30 sequence similarity matching tiktoken/HF).
+  \item Profiled and optimized kernels with \kw{Nsight Systems} (shared memory + compaction), benchmarking 256 - 131K tokens and demonstrating \kw{1.5 - 2\texttimes{}} throughput gains over tiktoken in batch inference.
+\end{itemize}
+
+\textbf{\href{https://github.com/venugopalkadamba/hpml-final-project}{Scaling FlashAttention: Distributed Implementation and Benchmarking on LLaMA Models}}\par
+\begin{itemize}
+  \item Implemented \kw{Distributed FlashAttention} for \kw{LLaMA2 7B and LLaMA3 1B} on a \kw{4-GPU HPC cluster}, achieving up to 10\% improved training bandwidth and stable latency across context lengths
+  \item Optimized memory efficiency, reducing peak memory usage with gradient checkpointing and \kw{Fully Sharded Data Parallel (FSDP) distributed training} to handle 24GB consumer-grade GPUs.
+\end{itemize}
+
+\resumeSection{PUBLICATIONS}
+
+\begin{itemize}
+  \item \href{https://link.springer.com/chapter/10.1007/978-3-031-99965-9_7}{Exploring Embedding Priors in Prompt-Tuning for Improved Interpretability and Control. In Intelligent Systems and Applications: Proceedings of the 2025 Intelligent Systems Conference (IntelliSys), Volume 4 (p. 98). Springer Nature}
+\end{itemize}
+
+\resumeSection{SKILLS}
+
+\resumeSubline{\textbf{Languages:} Python, C, C++, Java, Bash, SQL, ReactJS}
+\resumeSubline{\textbf{Tools/Technologies:} Git, AWS EC2, S3 Bucket, Data Analytics, Machine Learning, Deep Learning, Computer Vision, Natural Language Processing, Multimodal learning, Object-Oriented Programming, GPU optimization, Hadoop, MLFlow, Weights \& Bias}
+\resumeSubline{\textbf{Frameworks:} Scikit-Learn, Pandas, Spacy, OpenCV, PyTorch, TensorFlow, Huggingface, Langchain, Flask, ONNX, CUDA}
+
+\end{document}

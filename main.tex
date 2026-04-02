@@ -1,0 +1,116 @@
+\documentclass[10pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[margin=0.37in]{geometry}
+\usepackage{enumitem}
+\usepackage{microtype}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=Black,
+  citecolor=Black,
+  urlcolor=NavyBlue,
+  pdfborder={0 0 0},
+}
+\urlstyle{same}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\pagenumbering{gobble}
+\linespread{1.11}
+\flushbottom
+
+\setlist[itemize]{leftmargin=*, itemsep=0pt plus 1pt, topsep=0pt, parsep=0pt, partopsep=0pt}
+
+\newcommand{\resumeSection}[1]{%
+  \vspace{4pt plus 6pt}%
+  \textbf{#1}\par
+  \vspace{-5pt}%
+  \rule{\linewidth}{0.3pt}\par
+  \vspace{0pt}%
+}
+
+\newcommand{\resumeRole}[4]{%
+  \textbf{#1}\hfill #2\par
+  #3\hfill #4\par
+}
+
+\newcommand{\resumeSubline}[1]{%
+  #1\par
+}
+
+\newcommand{\kw}[1]{\textbf{#1}}
+
+\begin{document}
+
+\begin{center}
+  {\large \textbf{SURYA PRAKASH KOIDALA}}\par
+  \vspace{0.5pt}
+  \href{surya291.work@gmail.com}{surya291.work@gmail.com} | \href{https://www.linkedin.com/in/surya-prakash-koidala-27a8551a6/}{LinkedIn} | \href{https://github.com/Surya291}{GitHub}
+\end{center}
+
+\resumeSection{EDUCATION}
+
+\resumeSubline{\textbf{Indian Institute of Technology Hyderabad} \hfill 2018 -- 2022}
+\resumeSubline{B.Tech in Electrical Engineering (Major) with Minor in Artificial Intelligence \hfill CGPA: \kw{9.46}}
+
+\resumeSection{WORK EXPERIENCE}
+
+\resumeRole{Co-founder \& CTO}{Sep 2021 -- Feb 2026}{Lending Katalyst}{Bengaluru}
+\begin{itemize}
+  \item Built an \kw{AI copilot} for property title due diligence, reducing turnaround from \kw{4--10 days} to $<$\kw{4 hours}
+  \item Engineered \kw{document AI} systems for noisy, scanned, multilingual real estate legal data (processed over \kw{1.5M pages})
+  \item Built end-to-end \kw{document understanding} pipelines comprising \kw{denoising}, \kw{orientation}, \kw{OCR}, \kw{classification}, and \kw{extraction} by fine-tuning \kw{Vision (EfficientNet, YOLO)} and \kw{NER (BERT)} models, later evolving to \kw{LLM}-based systems 
+  \item Improved extraction reliability upto \kw{95\%} while optimizing LLMs cost and latency through \kw{context engineering}
+  \item Modeled property ownership as \kw{DAGs} with \kw{entity resolution} to detect missing transfers and \kw{automate legal checks}; built \kw{interactive graph visualizations} for inspecting and correcting ownership flows using Dash Cytoscape
+  \item Built domain-specific \kw{fuzzy matching algorithms} to resolve entities (like names of individuals, organisations; property IDs) across inconsistent real estate records
+  \item Built \kw{distributed task processing} systems using \kw{Celery} and configured autoscaling workers to handle bursty document workloads on \kw{AWS}/\kw{GCP}/\kw{Azure}
+  \item Designed \kw{Human-in-the-loop} interfaces for reviewing AI outcomes, enabling faster validation and correction while creating feedback loops that continuously improved product performance.
+\end{itemize}
+
+\vspace{0pt}
+\resumeRole{Undergraduate Student Researcher}{Jan 2021 - Jan 2022}{IIT Hyderabad + Univ. of Pittsburgh (Part-time)}{}
+\begin{itemize}
+  \item Built \kw{deep learning models} for diagnostic quality assessment in OCT medical images, achieving upto \kw{97\% accuracy}
+  \item Curated a dataset of \kw{4K+} OCT scans with expert annotations, setting up \kw{labeling workflows} for clinicians
+  \item Extended \kw{Grad-CAM} for interpretability to better align model attention with clinically relevant regions
+  \item Validated model outputs against expert annotations and co-authored published research
+\end{itemize}
+
+\vspace{0pt}
+\resumeRole{Software Developer Intern}{May 2021 -- Jul 2021}{ServiceNow}{Hyderabad}
+\begin{itemize}
+  \item Worked on an \kw{ML-based recommendation system} for personalized ranking on the ServiceNow platform
+  \item Designed feature signals and ranking logic to improve the relevance of recommendations
+  \item Contributed to integrating ML components into a production system in collaboration with engineering teams
+\end{itemize}
+
+\resumeSection{PROJECTS}
+\textbf{\href{https://github.com/Surya291/AgentXI}{Agent XI --- Autonomous Fantasy Cricket Agent}}\par
+\begin{itemize}
+  \item Built an \kw{autonomous agent} to manage fantasy IPL teams daily across a full season with minimal human intervention
+  \item Implemented constraint-based team selection using \kw{Integer Linear Programming (ILP)} under credit, role, team limits
+  \item Designed workflows to ingest signals like player performance \& availability and auto update game strategies over time by \kw{polling RSS news feed daily}
+  \item Deployed as a \kw{Hermes-Agent} runtime with a Telegram interface for user interaction, approvals, updates
+\end{itemize}
+
+
+\resumeSection{PUBLICATIONS}
+
+\begin{itemize}
+  \item \href{https://www.researchgate.net/publication/367500474\_Deep\_learning\_based\_diagnostic\_quality\_assessment\_of\_choroidal\_OCT\_features\_with\_expert-evaluated\_explainability}{Deep learning based diagnostic quality assessment of choroidal OCT features with expert-evaluated explainability}
+\end{itemize}
+
+\resumeSection{SKILLS}
+
+\resumeSubline{\textbf{Core Languages:} Python, C++, Bash}
+\resumeSubline{\textbf{AI/ML Tools \& Frameworks} PyTorch, Transformers (HuggingFace), Scikit-learn, OpenCV, spaCy, Document AI (OCR, classification, extraction), LayoutParser, Tesseract, PaddleOCR}
+\resumeSubline{\textbf{LLMs \& Agent Systems:} GPT, Gemini, Cursor, Claude Code, Hermes Agent, OpenClaw}
+\resumeSubline{\textbf{Backend \& Distributed Systems:} Flask, Celery (distributed task processing), RabbitMQ, Redis, Flower (monitoring), Docker, Kubernetes, distributed workers}
+\resumeSubline{\textbf{Cloud \& Infrastructure:} AWS (S3, EC2, Lambda, ECS, SES), GCP (Vertex AI, Document AI, Compute Engine), Vercel}
+\resumeSubline{\textbf{Data \& Tooling:} Pandas, NumPy, Jinja2, Dash Cytoscape, Git}
+
+\end{document}
