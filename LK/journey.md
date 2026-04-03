@@ -1,4 +1,8 @@
-# 1.5 Million Pages Later: Building an AI Copilot for Indian Property Law
+# Lending Katalyst -- my first startup & reflections..
+
+[![Landing: product entry point for lawyers and ops teams](assets/landing.png)](assets/landing.png)
+
+**Contents:** [Pipeline](#the-pipeline-left-to-right) · [Architecture](#system-architecture) · [Ingestion & boundaries](#making-sense-of-chaos-ingestion-and-document-boundaries) · [Extraction evolution](#from-ner-to-vision-llms-how-the-extraction-stack-evolved) · [Title chain](#turning-extracted-facts-into-a-legal-proof-the-title-chain) · [Distributed backend](#when-40-files-arrive-at-4pm-the-distributed-backend) · [UI trap](#the-ui-trap-more-surface-area-less-use) · [Lessons](#four-things-i-now-believe-more-strongly) · [References](#references)
 
 Four years ago, straight out of college, I co-founded Lending Katalyst, an AI copilot for property lawyers.[^lk] The job we cared about was property title search: legal due diligence to verify that the property you are buying has a clean title, free of liens, disputes, and encumbrances. The manual version was slow (four to ten working days per case), expensive, and full of human error as lawyers waded through hundreds to thousands of pages of multilingual real estate PDFs per matter.[^manual]
 
@@ -10,7 +14,7 @@ We started as a B2B SaaS, billing lawyers monthly (the classic dream), which nev
 
 Building this with my cofounder was the most exhilarating, fulfilling thing I have ever done. He showed up through every ebb and flow, never wavering, never flinching, just there, exactly when it mattered. We moved like yin and yang, counterbalancing each other's strengths and blind spots with an ease you cannot plan for. That dynamic is the part I will miss the most.
 
-Lending Katalyst landing page: product entry point for lawyers and ops teams.
+
 
 ## The pipeline, left to right
 
@@ -88,7 +92,7 @@ We treated partitioning as a vision problem, not "OCR everything and hope." A sm
 
 Models miss. We leaned into human-in-the-loop: a partition screen with a split-by-page grid let a user correct ranges in seconds instead of re-reading the whole stack.
 
-Partition screen: each page is classified and grouped by document type. Color-coded regions mark the detected boundaries. A user can drag to correct a range in seconds.
+[![Partition: pages grouped by document type; color-coded boundaries](assets/partition.png)](assets/partition.png)
 
 ---
 
@@ -106,7 +110,7 @@ We closed the loop with supervised fine-tuning on Gemini using roughly 300 hard,
 
 The clearest measure of the shift: shipping support for a new document type went from roughly twelve months of annotation and retraining to roughly one month, mostly spent on evals. The bottleneck moved from labeling pipelines to evaluation quality, and that changes how you build.
 
-Segregator screen: left panel shows the source PDF, right panel shows extracted structured fields. Party names, dates, document numbers, and registration details sit next to the page they came from. Every correction here became a training example.
+[![Segregator: PDF and extracted fields side by side; corrections fed SFT](assets/segregator.png)](assets/segregator.png)
 
 ---
 
@@ -133,9 +137,9 @@ Entity resolution was the unglamorous core. Real estate records are historically
 
 Once nodes resolved, the rule engine walked subgraphs, flagged gaps like the one above, ran the deterministic legal checks we could encode, and emitted a drafted Word document from a bank-specific template. The lawyer's job shifted from writer to final editor.
 
-Title chain as a live graph: each node is a transaction with its document type and date. Arrows show transfers of ownership. The search panel resolves a name across the chain, highlighting the two matching nodes. Clicking any node surfaces the full party and property details.
+[![Title chain graph: transactions, merges, search across parties](assets/title-chain.png)](assets/title-chain.png)
 
-Final report output: a bank-formatted table listing each document in the chain by survey number, date, and party description. This is the deliverable the lawyer signs off on.
+[![Report: bank-formatted table by survey number and parties](assets/report.png)](assets/report.png)
 
 ---
 
