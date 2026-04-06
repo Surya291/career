@@ -1,6 +1,7 @@
 # Lending Katalyst -- my first startup & reflections..
 
-[Landing: product entry point for lawyers and ops teams](assets/landing.png)
+<!-- [Landing: product entry point for lawyers and ops teams](assets/landing.png) -->
+[![Landing: product entry point for lawyers and ops teams](assets/landing.png)](assets/landing.png)
 
 **Contents:** [Pipeline](#the-pipeline-left-to-right) · [Architecture](#system-architecture) · [Ingestion & boundaries](#making-sense-of-chaos-ingestion-and-document-boundaries) · [Extraction evolution](#from-ner-to-vision-llms-how-the-extraction-stack-evolved) · [Title chain](#turning-extracted-facts-into-a-legal-proof-the-title-chain) · [Distributed backend](#when-40-files-arrive-at-4pm-the-distributed-backend) · [UI trap](#the-ui-trap-more-surface-area-less-use) · [Lessons](#four-things-i-now-believe-more-strongly) · [References](#references)
 
