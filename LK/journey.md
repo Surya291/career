@@ -95,7 +95,7 @@ We treated partitioning as a vision problem, not "OCR everything and hope." A sm
 
 Models miss. We leaned into human-in-the-loop: a partition screen with a split-by-page grid let a user correct ranges in seconds instead of re-reading the whole stack.
 
-[Partition: pages grouped by document type; color-coded boundaries](assets/partition.png)
+[![Partition: pages grouped by document type; color-coded boundaries](assets/partition.png)](assets/partition.png)
 
 ---
 
@@ -115,7 +115,7 @@ We closed the loop with supervised fine-tuning on Gemini using roughly 300 hard,
 
 The clearest measure of the shift: shipping support for a new document type went from roughly twelve months of annotation and retraining to roughly one month, mostly spent on evals. The bottleneck moved from labeling pipelines to evaluation quality, and that changes how you build.
 
-[Segregator: PDF and extracted fields side by side; corrections fed SFT](assets/segregator.png)
+[![Segregator: PDF and extracted fields side by side; corrections fed SFT](assets/segregator.png)](assets/segregator.png)
 
 ---
 
@@ -144,9 +144,9 @@ Entity resolution was the unglamorous core. Real estate records are historically
 
 Once nodes resolved, the rule engine walked subgraphs, flagged gaps like the one above, ran the deterministic legal checks we could encode, and emitted a drafted Word document from a bank-specific template. The lawyer's job shifted from writer to final editor.
 
-[Title chain graph: transactions, merges, search across parties](assets/title-chain.png)
+[![Title chain graph: transactions, merges, search across parties](assets/title-chain.png)](assets/title-chain.png)
 
-[Report: bank-formatted table by survey number and parties](assets/report.png)
+[![Report: bank-formatted table by survey number and parties](assets/report.png)](assets/report.png)
 
 ---
 
